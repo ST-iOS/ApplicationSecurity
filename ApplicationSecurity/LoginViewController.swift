@@ -17,10 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var appleButton: UIButton!
-    
-    let usernameKey = "subash"
-    let passwordKey = "thapa"
-    
+
     var passwordItems: [KeychainPasswordItem] = []
     let createLoginButtonTag = 0
     let loginButtonTag = 1
@@ -38,6 +35,31 @@ class LoginViewController: UIViewController {
         } else {
             showError()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        clearTextField()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureToHideKeyboard()
+    }
+    
+    func addTapGestureToHideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action:#selector(hideKeyboard))
+        tap.cancelsTouchesInView =  false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func clearTextField() {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     func checkLogin(username: String, password: String) -> Bool {
@@ -70,7 +92,9 @@ class LoginViewController: UIViewController {
     
     func showAlert(title:String, message: String) {
         let alertController = UIAlertController(title:title, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .default)
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            self.clearTextField()
+        }
         alertController.addAction(alertAction)
         self.present(alertController, animated: true)
     }
