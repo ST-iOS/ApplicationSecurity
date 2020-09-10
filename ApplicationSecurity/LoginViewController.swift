@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInAction(_ sender: Any) {
         guard let username = userNameTextField.text, let password = passwordTextField.text else {
-            showErrorAlert()
+            showError()
             return
         }
         userNameTextField.resignFirstResponder()
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         if checkLogin(username: username, password: password) {
           performSegue(withIdentifier: "dismissLogin", sender: self)
         } else {
-            showErrorAlert()
+            showError()
         }
     }
     
@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpAction(_ sender: Any) {
         guard let username = userNameTextField.text, let password = passwordTextField.text else {
-            showErrorAlert()
+            showError()
             return
         }
         let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
@@ -60,19 +60,26 @@ class LoginViewController: UIViewController {
                                                 accessGroup: KeychainConfiguration.accessGroup)
         do {
             try passwordItem.savePassword(password)
+            showAlert(title: "Success", message: "Sign up successful")
+            
         } catch {
             fatalError("Error updating keychain")
         }
-        
     }
     
     
-    func showErrorAlert() {
-        let alertController = UIAlertController(title: "Error", message: "Login Failed", preferredStyle: .alert)
+    func showAlert(title:String, message: String) {
+        let alertController = UIAlertController(title:title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Ok", style: .default)
         alertController.addAction(alertAction)
         self.present(alertController, animated: true)
     }
+    
+    func showError() {
+          showAlert(title: "Error", message: "Failed")
+      }
+      
+    
 
 }
 
