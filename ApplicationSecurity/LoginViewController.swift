@@ -21,14 +21,29 @@ class LoginViewController: UIViewController {
     let usernameKey = "subash"
     let passwordKey = "thapa"
     
+    var passwordItems: [KeychainPasswordItem] = []
+    let createLoginButtonTag = 0
+    let loginButtonTag = 1
+    
     @IBAction func signInAction(_ sender: Any) {
-        if checkLogin(username: userNameTextField.text!, password: passwordTextField.text!) {
+        guard let username = userNameTextField.text, let password = passwordTextField.text else {
+            showErrorAlert()
+            return
+        }
+        userNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+        if checkLogin(username: username, password: password) {
           performSegue(withIdentifier: "dismissLogin", sender: self)
         } else {
             showErrorAlert()
         }
     }
-
+    @IBAction func signUpAction(_ sender: Any) {
+        
+        
+    }
+    
     func checkLogin(username: String, password: String) -> Bool {
       return username == usernameKey && password == passwordKey
     }

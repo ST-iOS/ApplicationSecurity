@@ -116,13 +116,40 @@
                                             <constraint firstAttribute="height" constant="50" id="N68-aB-Wuc"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have a account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-kc-II6">
+                                        <rect key="frame" x="133.33333333333331" y="194" width="147.33333333333331" height="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddy-7o-MPx">
+                                        <rect key="frame" x="128.66666666666666" y="221" width="156.99999999999997" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="9Eu-H7-jEm"/>
+                                            <constraint firstAttribute="height" constant="50" id="N5U-qt-fCv"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="uuP-vm-p66"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fji-87-e0t"/>
+                                            <action selector="signUpAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZj-A6-ACF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="mCl-kc-II6" firstAttribute="centerX" secondItem="lEN-kC-FLf" secondAttribute="centerX" id="1p7-gf-KwW"/>
                                     <constraint firstItem="GG5-FN-q1L" firstAttribute="leading" secondItem="lEN-kC-FLf" secondAttribute="leading" constant="30" id="Avc-Ob-kte"/>
+                                    <constraint firstItem="ddy-7o-MPx" firstAttribute="top" secondItem="Em3-xc-keI" secondAttribute="bottom" constant="70.670000000000002" id="BEk-53-HKs"/>
+                                    <constraint firstItem="ddy-7o-MPx" firstAttribute="top" secondItem="mCl-kc-II6" secondAttribute="bottom" constant="8" id="G3W-Wj-YEd"/>
                                     <constraint firstItem="Woz-bv-f0z" firstAttribute="centerX" secondItem="lEN-kC-FLf" secondAttribute="centerX" id="KCO-Vl-uHZ"/>
                                     <constraint firstItem="Em3-xc-keI" firstAttribute="centerX" secondItem="lEN-kC-FLf" secondAttribute="centerX" id="W1l-e9-Nhh"/>
                                     <constraint firstItem="Woz-bv-f0z" firstAttribute="top" secondItem="GG5-FN-q1L" secondAttribute="bottom" constant="15" id="XqG-nu-6DQ"/>
+                                    <constraint firstItem="ddy-7o-MPx" firstAttribute="centerX" secondItem="lEN-kC-FLf" secondAttribute="centerX" id="dTE-LV-ZAW"/>
                                     <constraint firstItem="GG5-FN-q1L" firstAttribute="centerX" secondItem="lEN-kC-FLf" secondAttribute="centerX" id="ek0-5Q-cEq"/>
                                     <constraint firstItem="Em3-xc-keI" firstAttribute="top" secondItem="Woz-bv-f0z" secondAttribute="bottom" constant="15" id="trt-4h-oh2"/>
                                     <constraint firstItem="GG5-FN-q1L" firstAttribute="top" secondItem="lEN-kC-FLf" secondAttribute="top" id="vX2-OH-mAf"/>

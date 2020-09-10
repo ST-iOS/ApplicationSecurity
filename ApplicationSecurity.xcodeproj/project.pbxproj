@@ -14,6 +14,7 @@
 		BBAF9CC824FF455100576CD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAF9CC624FF455100576CD1 /* LaunchScreen.storyboard */; };
 		BBAF9CD02501F1F300576CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBAF9CCF2501F1F300576CD1 /* Main.storyboard */; };
 		BBD199C62509FC2600A48C4F /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD199C52509FC2600A48C4F /* KeychainPasswordItem.swift */; };
+		BBD199C82509FC9A00A48C4F /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD199C72509FC9A00A48C4F /* KeyChainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BBAF9CC924FF455100576CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBAF9CCF2501F1F300576CD1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BBD199C52509FC2600A48C4F /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		BBD199C72509FC9A00A48C4F /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD199C52509FC2600A48C4F /* KeychainPasswordItem.swift */,
+				BBD199C72509FC9A00A48C4F /* KeyChainManager.swift */,
 			);
 			path = KeyChain;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				BBAF9CC024FF454F00576CD1 /* LoginViewController.swift in Sources */,
 				BBAF9CBC24FF454F00576CD1 /* AppDelegate.swift in Sources */,
+				BBD199C82509FC9A00A48C4F /* KeyChainManager.swift in Sources */,
 				BBAF9CBE24FF454F00576CD1 /* SceneDelegate.swift in Sources */,
 				BBD199C62509FC2600A48C4F /* KeychainPasswordItem.swift in Sources */,
 			);
