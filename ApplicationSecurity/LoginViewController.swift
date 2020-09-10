@@ -39,14 +39,33 @@ class LoginViewController: UIViewController {
             showErrorAlert()
         }
     }
+    
+    func checkLogin(username: String, password: String) -> Bool {
+        let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+                                                           account: username,
+                                                           accessGroup: KeychainConfiguration.accessGroup)
+        guard let keychainPassword = try? passwordItem.readPassword() else {
+            return false
+        }
+        return password == keychainPassword
+    }
+    
     @IBAction func signUpAction(_ sender: Any) {
-        
+        guard let username = userNameTextField.text, let password = passwordTextField.text else {
+            showErrorAlert()
+            return
+        }
+        let passwordItem = KeychainPasswordItem(service: KeychainConfiguration.serviceName,
+                                                account:username,
+                                                accessGroup: KeychainConfiguration.accessGroup)
+        do {
+            try passwordItem.savePassword(password)
+        } catch {
+            fatalError("Error updating keychain")
+        }
         
     }
     
-    func checkLogin(username: String, password: String) -> Bool {
-      return username == usernameKey && password == passwordKey
-    }
     
     func showErrorAlert() {
         let alertController = UIAlertController(title: "Error", message: "Login Failed", preferredStyle: .alert)
